@@ -15,6 +15,35 @@ public class Book {
 
     public void printAuthorOfThisBook(){
         //3e. Add another method to print the author of a specific book.
-        System.out.println("Author of this book is: " + this.author.firstName + " " + this.author.lastName);
+        if (this.author.lastName == null){
+            System.out.println("The author of " + this.title + " is " + this.author.firstName + ".");
+        } else
+            System.out.println("The author of " + this.title + " is " + this.author.firstName + " " + this.author.lastName + ".");
+    }
+
+    public void printTitleOfThisBook(){
+        System.out.println("Title:" + this.title);
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        if(author == null){
+            throw new IllegalArgumentException("author was null.");
+        }
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        if(title == null){
+            throw new IllegalArgumentException("title was null.");
+        }
+        this.title = title;
     }
 }

@@ -1,6 +1,6 @@
 package se.lexicon;
 
-import java.sql.Array;
+import java.time.LocalDate;
 
 /**
  * Hello world!
@@ -11,13 +11,13 @@ public class App
     public static void main( String[] args )
     {
 //      1c. In the main program make instance of “Car” and call the method “drive”.
-        Car car1 = new Car(1, 1992, "Fiesta", "Blue", "V32");
-        car1.drive();
+//        Car car1 = new Car(1, 1992, "Fiesta", "Blue", "V32");
+//        car1.drive();
 
         //2e. In the main program create instance of that “Rectangle” and ask user for height and
         //width and then print calculated area.
-        Rectangle rect1 = new Rectangle();
-        System.out.println(rect1.getArea2(5, 10));
+//        Rectangle rect1 = new Rectangle();
+//        System.out.println(rect1.getArea2(5, 10));
 
         //3c. In the main program create an array of authors where each author has at least one book.
 
@@ -25,9 +25,9 @@ public class App
         Book[] PL_Books = new Book[2];
         Book[] JS_Books = new Book[1];
 
-        Author MA = new Author("Marcus", "Aurelius", 121, MA_Books);
-        Author PL = new Author("Plato", "", -428, PL_Books);
-        Author JS = new Author("Jonathan", "Stroud", 1970, JS_Books);
+        Author MA = new Author("Marcus", "Aurelius", LocalDate.of(121,1 , 1), MA_Books);
+        Author PL = new Author("Plato", LocalDate.of(-428, 1, 1), PL_Books);
+        Author JS = new Author("Jonathan", "Stroud", LocalDate.of(1970, 10, 27), JS_Books);
 
         Book meditations = new Book(MA, "the Meditations");
         Book republic = new Book(PL, "the Republic");
@@ -48,10 +48,19 @@ public class App
 
         //3d. Add a method that prints all books that have been written by a specific author.
 
-        MA.printBooks();
-        PL.printBooks();
+        MA.printBooksOfAuthor();
+        PL.printBooksOfAuthor();
+        JS.printBooksOfAuthor();
+
+        MA.printAuthorWasBorn();
+        PL.printAuthorWasBorn();
+        JS.printAuthorWasBorn();
 
         //3e. Add another method to print the author of a specific book.
         meditations.printAuthorOfThisBook();
+        republic.printAuthorOfThisBook();
+        trialanddeath.printAuthorOfThisBook();
+        bartimaeus.printAuthorOfThisBook();
+
     }
 }
