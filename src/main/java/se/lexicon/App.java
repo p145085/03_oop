@@ -21,6 +21,7 @@ public class App
 
         //3c. In the main program create an array of authors where each author has at least one book.
 
+        //Not sure what I'm doing here.
         Book[] MarcusAurelius_books = new Book[1];
         Book[] Plato_books = new Book[2];
         Book[] JonathanStroud_books = new Book[1];
@@ -38,10 +39,11 @@ public class App
         Book[] MohamedouOuldSlahi_books = new Book[1];
         Book[] NealStephenson_books = new Book[1];
 
+        //Create Author objects
         Author MarcusAurelius = new Author("Marcus", "Aurelius", LocalDate.of(121,1 , 1), MarcusAurelius_books);
         Author Plato = new Author("Plato", LocalDate.of(-428, 1, 1), Plato_books);
         Author JonathanStroud = new Author("Jonathan", "Stroud", LocalDate.of(1970, 10, 27), JonathanStroud_books);
-        Author Lovecraft = new Author("Howard Phillips", "Lovecraft", LocalDate.of(1890,8,20), Lovecraft);
+        Author Lovecraft = new Author("Howard Phillips", "Lovecraft", LocalDate.of(1890,8,20), HPLovecraft_books);
         Author Homeros = new Author("Homeros", LocalDate.of(-800,1,1), Homeros_books);
         Author Heidegger = new Author("Martin", "Heidegger", LocalDate.of(1889,9,26), MartinHeidegger_books);
         Author Frazer = new Author("Sir James", "Frazer", LocalDate.of(1854, 1, 1), Frazer_books);
@@ -55,6 +57,8 @@ public class App
         Author MohamedouOuldSlahi = new Author("Mohamedou Ould", "Slahi", LocalDate.of(1970, 12, 21), MohamedouOuldSlahi_books);
         Author NealStephenson = new Author("Neal", "Stephenson", LocalDate.of(1959, 10, 31), NealStephenson_books);
 
+
+        //Create book objects for specified Author with defined Title and whether or not I own the book.
         Book meditations = new Book(MarcusAurelius, "the Meditations", true);
         Book therepublic = new Book(Plato, "the Republic", true);
         Book trialanddeath = new Book(Plato, "Trial and Death of Socrates", false);
@@ -75,6 +79,7 @@ public class App
         Book guantanamo = new Book(MohamedouOuldSlahi, "Guantánamo, a diary", true);
         Book snowcrash = new Book(NealStephenson, "Snow Crash", true);
 
+        //Insert the Book objects into the Book array(s).
         MarcusAurelius_books[0] = meditations;
         Plato_books[0] = therepublic;
         Plato_books[1] = trialanddeath;
@@ -116,10 +121,10 @@ public class App
 
 
         //3d. Add a method that prints all books that have been written by a specific author.
-
+        Lovecraft.printBooksOfAuthor();
 
         //3e. Add another method to print the author of a specific book.
-
+        meditations.printAuthorOfThisBook();
 
     }
 }
