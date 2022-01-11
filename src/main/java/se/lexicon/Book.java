@@ -7,10 +7,12 @@ public class Book {
     //ii. One author can write one or more books.
     public Author author;
     public String title;
+    private boolean owned;
 
-    public Book(Author author, String title) {
+    public Book(Author author, String title, boolean owned) {
         this.author = author;
         this.title = title;
+        this.owned = owned;
     }
 
     public void printAuthorOfThisBook(){
